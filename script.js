@@ -1,8 +1,14 @@
-//your code here
-    const textInput = document.getElementById('evaluatedText');
-    const letterCount = document.getElementById('letterCount');
+window.onload = function () {
+    const inputBox = document.getElementById("evaluatedText");
+    const output = document.getElementById("letterCount");
 
-    textInput.addEventListener('input', () => {
-      letterCount.textContent = textInput.value.length;
-    });
- 
+    function updateCount() {
+        output.innerText = inputBox.value.length;
+    }
+
+    inputBox.addEventListener("input", updateCount);
+
+    // Initialize the count on page load
+    updateCount();
+};
+
